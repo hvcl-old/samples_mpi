@@ -4,12 +4,12 @@
 
 #define cudaCheckLastError() {                                          			\
 	cudaError_t error = cudaGetLastError();                               			\
-	int id; cudaGetDevice(&id);														\
-	if(error != cudaSuccess) {                                         				\
+	int id; cudaGetDevice(&id);                                                     \
+	if(error != cudaSuccess) {                                                      \
 		printf("Cuda failure error in file '%s' in line %i: '%s' at device %d \n",	\
-			__FILE__,__LINE__, cudaGetErrorString(error), id);			      	 	\
-		exit(EXIT_FAILURE);  														\
-	}                                                               				\
+			__FILE__,__LINE__, cudaGetErrorString(error), id);                      \
+		exit(EXIT_FAILURE);                                                         \
+	}                                                                               \
 }
 
 int main (int argc, char *argv[])
